@@ -1,10 +1,11 @@
 from datetime import date, datetime
+import logging
 from typing import List, Optional
 from sqlalchemy.orm import Session
 from sqlalchemy import func
-from app.db.models import ShiftDB
+from app.db.models import EmployeeDB, ShiftDB
 
-
+logger = logging.getLogger(__name__)
 class ShiftRepository:
     def __init__(self, db: Session) -> None:
         # Store the session instance on the repository
@@ -140,20 +141,41 @@ class ShiftRepository:
         overlapping_shifts: List[ShiftDB] = query_for_shifts.all()
         return overlapping_shifts
     
-    def get_analytics_by_employee(self, start_date, end_date):
+    def get_analytics_by_employee_all_time(self):
+        logger.info("inside get_analytics_by_employee_all_time")
         duration_hours = (
-            func.extract("epoch", ShiftDB.end_time - ShiftDB.start_time) / 3600.0
+            (func.strftime('%s', ShiftDB.end_time) - func.strftime('%s', ShiftDB.start_time))
+            / 3600.0
         )
-        query = (
-            self.session.query(
+        return (
+            self.db.query(
                 ShiftDB.employee_id.label("employee_id"),
+                EmployeeDB.name.label("employee_name"),
                 func.count(ShiftDB.id).label("total_shifts"),
                 func.sum(duration_hours).label("total_hours"),
             )
-            .filter(
-                ShiftDB.date >= start_date,
-                ShiftDB.date <= end_date,
-            )
-            .group_by(ShiftDB.employee_id)
+            .join(EmployeeDB, EmployeeDB.id == ShiftDB.employee_id)
+            .group_by(ShiftDB.employee_id, EmployeeDB.name)
+            .all()
         )
+
+    def get_analytics_by_employee(self, start_date, end_date):
+        duration_hours = (
+            (func.strftime('%s', ShiftDB.end_time) - func.strftime('%s', ShiftDB.start_time)) / 3600.0
+        )
+        session = self.db
+        query = (
+        session.query(
+            ShiftDB.employee_id.label("employee_id"),
+            EmployeeDB.name.label("employee_name"),
+            func.count(ShiftDB.id).label("total_shifts"),
+            func.sum(duration_hours).label("total_hours"),
+        )
+        .join(EmployeeDB, EmployeeDB.id == ShiftDB.employee_id)
+        .filter(
+            ShiftDB.shift_date >= start_date,
+            ShiftDB.shift_date <= end_date,
+        )
+        .group_by(ShiftDB.employee_id, EmployeeDB.name)
+    )
         return query.all()

@@ -1,789 +1,120 @@
-2026-01-14 10:48:12,069 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-14 10:50:54,152 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-14 10:50:54,154 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-14 10:50:54,154 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-14 10:50:54,154 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-14 10:50:54,155 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-14 10:50:54,157 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-14 10:50:54,158 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-14 10:51:16,401 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-14 10:51:16,404 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees
-2026-01-14 10:51:16,411 - INFO - sqlalchemy.engine.Engine - [generated in 0.00069s] ()
-2026-01-14 10:51:16,427 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-14 10:52:18,003 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-14 10:52:18,006 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-14 10:52:18,006 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-14 10:52:18,006 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-14 10:52:18,008 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-14 10:52:18,008 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-14 10:52:18,009 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:21:41,737 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:21:41,743 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:21:41,743 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:21:41,743 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:21:41,746 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:21:41,746 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:21:41,746 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:21:56,361 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:21:56,365 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees
-2026-01-16 14:21:56,366 - INFO - sqlalchemy.engine.Engine - [generated in 0.00094s] ()
-2026-01-16 14:21:56,374 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 14:22:19,858 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:22:19,863 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts ORDER BY shifts.shift_date ASC
-2026-01-16 14:22:19,869 - INFO - sqlalchemy.engine.Engine - [generated in 0.00608s] ()
-2026-01-16 14:22:19,878 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 14:26:44,776 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:26:44,778 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:26:44,779 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:26:44,779 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:26:44,781 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:26:44,781 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:26:44,783 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:29:03,433 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:29:03,435 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:29:03,435 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:29:03,436 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:29:03,437 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:29:03,437 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:29:03,437 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:29:31,656 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:29:31,663 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 14:29:31,663 - INFO - sqlalchemy.engine.Engine - [generated in 0.00075s] (4, 1, 0)
-2026-01-16 14:29:31,665 - WARNING - wasty_app.services.schedule - Attempted to create shift for non-existing employee_id=4
-2026-01-16 14:29:31,669 - INFO - sqlalchemy.engine.Engine - INSERT INTO shifts (employee_id, shift_date, shift, note, start_time, end_time) VALUES (?, ?, ?, ?, ?, ?)
-2026-01-16 14:29:31,669 - INFO - sqlalchemy.engine.Engine - [generated in 0.00074s] (4, '2025-05-22', 'MORNING', 'Regular shift', '2025-05-22 08:00:00.000000', '2025-05-22 16:00:00.000000')
-2026-01-16 14:29:31,677 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:29:31,687 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:29:31,706 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id, shifts.employee_id, shifts.shift_date, shifts.shift, shifts.note, shifts.start_time, shifts.end_time 
-FROM shifts 
-WHERE shifts.id = ?
-2026-01-16 14:29:31,708 - INFO - sqlalchemy.engine.Engine - [generated in 0.00215s] (2,)
-2026-01-16 14:29:31,724 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 14:32:51,149 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:32:51,155 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:32:51,157 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:32:51,159 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:32:51,162 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:32:51,164 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:32:51,167 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:32:54,613 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:32:54,616 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:32:54,616 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:32:54,617 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:32:54,618 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:32:54,618 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:32:54,619 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:33:30,198 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:33:30,200 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:33:30,200 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:33:30,200 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:33:30,201 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:33:30,202 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:33:30,202 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:33:58,588 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:33:58,590 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:33:58,591 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:33:58,593 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:33:58,595 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:33:58,596 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:33:58,597 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:34:10,849 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:34:10,851 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:34:10,853 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:34:10,854 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:34:10,855 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:34:10,856 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:34:10,857 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:36:03,050 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:36:03,052 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:36:03,053 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:36:03,054 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:36:03,055 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:36:03,056 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:36:03,057 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:50:18,340 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:50:18,342 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:50:18,342 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:50:18,343 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:50:18,345 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:50:18,346 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:50:18,347 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:51:51,170 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:51:51,171 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:51:51,171 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:51:51,171 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:51:51,172 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:51:51,172 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:51:51,173 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:52:07,012 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:52:07,014 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:52:07,015 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:52:07,015 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:52:07,017 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:52:07,017 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:52:07,018 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:53:34,575 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 14:53:34,576 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:53:34,577 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 14:53:34,577 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:53:34,578 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 14:53:34,579 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 14:53:34,579 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 14:53:42,982 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:53:42,987 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 14:53:42,988 - INFO - sqlalchemy.engine.Engine - [generated in 0.00093s] (4, 1, 0)
-2026-01-16 14:53:42,992 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 14:53:42,993 - WARNING - app.core.exception_handlers - EmployeeNotFoundError on POST http://127.0.0.1:8000/schedule: Employee with id=4 does not exist
-2026-01-16 14:54:00,262 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 14:54:00,265 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 14:54:00,266 - INFO - sqlalchemy.engine.Engine - [cached since 17.28s ago] (5, 1, 0)
-2026-01-16 14:54:00,269 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 14:54:00,272 - WARNING - app.core.exception_handlers - EmployeeNotFoundError on POST http://127.0.0.1:8000/schedule: Employee with id=5 does not exist
-2026-01-16 15:49:07,117 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 15:49:07,119 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:49:07,120 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 15:49:07,120 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:49:07,122 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 15:49:07,123 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:49:07,124 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 15:54:50,093 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 15:54:50,095 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:54:50,095 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 15:54:50,096 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:54:50,097 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 15:54:50,098 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:54:50,099 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 15:56:31,068 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 15:56:31,069 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:56:31,069 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 15:56:31,070 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:56:31,070 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 15:56:31,071 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 15:56:31,071 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 15:58:03,401 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:58:03,407 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 15:58:03,407 - INFO - sqlalchemy.engine.Engine - [generated in 0.00083s] (5, 1, 0)
-2026-01-16 15:58:03,410 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 15:58:03,412 - WARNING - app.core.exception_handlers - EmployeeNotFoundError on POST http://127.0.0.1:8000/schedule: Employee with id=5 does not exist
-2026-01-16 15:58:22,633 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:58:22,634 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 15:58:22,635 - INFO - sqlalchemy.engine.Engine - [cached since 19.23s ago] (4, 1, 0)
-2026-01-16 15:58:22,637 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 15:58:22,638 - WARNING - app.core.exception_handlers - EmployeeNotFoundError on POST http://127.0.0.1:8000/schedule: Employee with id=4 does not exist
-2026-01-16 15:58:56,224 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 15:58:56,225 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 15:58:56,227 - INFO - sqlalchemy.engine.Engine - [cached since 52.82s ago] (2, 1, 0)
-2026-01-16 15:58:56,229 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 15:58:56,230 - ERROR - app.core.exception_handlers - Unhandled exception on POST http://127.0.0.1:8000/schedule: AttributeError("type object 'ShiftDB' has no attribute 'date'")
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\schedule.py", line 99, in create_shift
-    created_shift: ShiftResponse = shift_service.create_shift(
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 73, in create_shift
-    overlapping_shifts = self.shift_repository.find_overlapping_shifts_for_employee(
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\repositories\schedule.py", line 132, in find_overlapping_shifts_for_employee
-    ShiftDB.date == date_value,
-    ^^^^^^^^^^^^
-AttributeError: type object 'ShiftDB' has no attribute 'date'
-2026-01-16 16:00:05,678 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:00:05,680 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:00:05,681 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:00:05,681 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:00:05,683 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:00:05,684 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:00:05,685 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:00:17,778 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:00:17,785 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 16:00:17,786 - INFO - sqlalchemy.engine.Engine - [generated in 0.00111s] (2, 1, 0)
-2026-01-16 16:00:17,801 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts 
-WHERE shifts.employee_id = ? AND shifts.shift_date = ? AND shifts.start_time < ? AND shifts.end_time > ?
-2026-01-16 16:00:17,802 - INFO - sqlalchemy.engine.Engine - [generated in 0.00179s] (2, '2025-05-22', '2025-05-22 16:00:00.000000', '2025-05-22 08:00:00.000000')
-2026-01-16 16:00:17,816 - INFO - sqlalchemy.engine.Engine - INSERT INTO shifts (employee_id, shift_date, shift, note, start_time, end_time) VALUES (?, ?, ?, ?, ?, ?)
-2026-01-16 16:00:17,817 - INFO - sqlalchemy.engine.Engine - [generated in 0.00120s] (2, '2025-05-22', 'MORNING', 'Regular shift', '2025-05-22 08:00:00.000000', '2025-05-22 16:00:00.000000')
-2026-01-16 16:00:17,845 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:00:17,880 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:00:17,907 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id, shifts.employee_id, shifts.shift_date, shifts.shift, shifts.note, shifts.start_time, shifts.end_time 
-FROM shifts 
-WHERE shifts.id = ?
-2026-01-16 16:00:17,911 - INFO - sqlalchemy.engine.Engine - [generated in 0.00225s] (3,)
-2026-01-16 16:00:17,926 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 16:00:43,665 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:00:43,667 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 16:00:43,667 - INFO - sqlalchemy.engine.Engine - [cached since 25.88s ago] (2, 1, 0)
-2026-01-16 16:00:43,670 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts 
-WHERE shifts.employee_id = ? AND shifts.shift_date = ? AND shifts.start_time < ? AND shifts.end_time > ?
-2026-01-16 16:00:43,671 - INFO - sqlalchemy.engine.Engine - [cached since 25.87s ago] (2, '2025-05-22', '2025-05-22 16:00:00.000000', '2025-05-22 09:00:00.000000')
-2026-01-16 16:00:43,674 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 16:00:43,676 - INFO - app.core.exception_handlers - ShiftConflictError on POST http://127.0.0.1:8000/schedule: Employee already has a shift that overlaps with the requested time window on this date
-2026-01-16 16:01:13,575 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:01:13,576 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 16:01:13,577 - INFO - sqlalchemy.engine.Engine - [cached since 55.79s ago] (2, 1, 0)
-2026-01-16 16:01:13,580 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts 
-WHERE shifts.employee_id = ? AND shifts.shift_date = ? AND shifts.start_time < ? AND shifts.end_time > ?
-2026-01-16 16:01:13,581 - INFO - sqlalchemy.engine.Engine - [cached since 55.78s ago] (2, '2025-05-22', '2025-05-22 16:30:00.000000', '2025-05-22 17:00:00.000000')
-2026-01-16 16:01:13,588 - INFO - sqlalchemy.engine.Engine - INSERT INTO shifts (employee_id, shift_date, shift, note, start_time, end_time) VALUES (?, ?, ?, ?, ?, ?)
-2026-01-16 16:01:13,594 - INFO - sqlalchemy.engine.Engine - [cached since 55.78s ago] (2, '2025-05-22', 'MORNING', 'Regular shift', '2025-05-22 17:00:00.000000', '2025-05-22 16:30:00.000000')
-2026-01-16 16:01:13,603 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:01:13,626 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:01:13,631 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id, shifts.employee_id, shifts.shift_date, shifts.shift, shifts.note, shifts.start_time, shifts.end_time 
-FROM shifts 
-WHERE shifts.id = ?
-2026-01-16 16:01:13,633 - INFO - sqlalchemy.engine.Engine - [cached since 55.73s ago] (4,)
-2026-01-16 16:01:13,653 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 16:06:05,295 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:06:05,299 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:06:05,300 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:06:05,300 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:06:05,302 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:06:05,303 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:06:05,304 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:07:23,810 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:07:23,813 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:07:23,814 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:07:23,814 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:07:23,816 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:07:23,816 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:07:23,818 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:07:49,813 - ERROR - app.core.exception_handlers - Unhandled exception on POST http://127.0.0.1:8000/schedule: TypeError("ShiftService.validate_shift_times() got multiple values for argument 'start_time'")
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\schedule.py", line 99, in create_shift
-    created_shift: ShiftResponse = shift_service.create_shift(
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 66, in create_shift
-    self.validate_shift_times(start_time=shift_in.start_time, end_time=shift_in.end_time)
-TypeError: ShiftService.validate_shift_times() got multiple values for argument 'start_time'
-2026-01-16 16:10:19,441 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:10:19,444 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:10:19,445 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:10:19,445 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:10:19,447 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:10:19,447 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:10:19,448 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:10:23,214 - ERROR - app.core.exception_handlers - Unhandled exception on POST http://127.0.0.1:8000/schedule: ValueError('end_time must be strictly after start_time')
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\schedule.py", line 99, in create_shift
-    created_shift: ShiftResponse = shift_service.create_shift(
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 66, in create_shift
-    self.validate_shift_times(start_time=shift_in.start_time, end_time=shift_in.end_time)
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 180, in validate_shift_times
-    raise ValueError("end_time must be strictly after start_time")
-ValueError: end_time must be strictly after start_time
-2026-01-16 16:12:42,732 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:12:42,733 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:12:42,734 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:12:42,734 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:12:42,735 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:12:42,735 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:12:42,735 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:12:53,800 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:12:53,801 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:12:53,802 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:12:53,802 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:12:53,805 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:12:53,805 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:12:53,806 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:12:56,403 - ERROR - app.core.exception_handlers - Unhandled exception on POST http://127.0.0.1:8000/schedule: ValueError('end_time must be strictly after start_time')
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\schedule.py", line 99, in create_shift
-    created_shift: ShiftResponse = shift_service.create_shift(
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 66, in create_shift
-    self.validate_shift_times(start_time=shift_in.start_time, end_time=shift_in.end_time)
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 180, in validate_shift_times
-    raise ValueError("end_time must be strictly after start_time")
-ValueError: end_time must be strictly after start_time
-2026-01-16 16:13:30,284 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:13:30,288 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:13:30,289 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:13:30,291 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:13:30,300 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:13:30,301 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:13:30,303 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:13:33,358 - ERROR - app.core.exception_handlers - Unhandled exception on POST http://127.0.0.1:8000/schedule: ValueError('end_time must be strictly after start_time')
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 355, in app
-    raw_response = await run_endpoint_function(
-                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 245, in run_endpoint_function
-    return await run_in_threadpool(dependant.call, **values)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\schedule.py", line 99, in create_shift
-    created_shift: ShiftResponse = shift_service.create_shift(
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 66, in create_shift
-    self.validate_shift_times(start_time=shift_in.start_time, end_time=shift_in.end_time)
-  File "C:\Users\kalpa\projects\wasty\app\services\schedule.py", line 180, in validate_shift_times
-    raise ValueError("end_time must be strictly after start_time")
-ValueError: end_time must be strictly after start_time
-2026-01-16 16:15:07,933 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:15:07,935 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:15:07,935 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:15:07,935 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:07,936 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:15:07,936 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:07,937 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:15:44,509 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:15:44,511 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:15:44,512 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:15:44,512 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:44,515 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:15:44,515 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:44,516 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:15:49,555 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:15:49,557 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:15:49,557 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:15:49,557 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:49,558 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:15:49,559 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:15:49,559 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:15:51,970 - INFO - app.core.exception_handlers - ShiftConflictError on POST http://127.0.0.1:8000/schedule: end_time must be strictly after start_time
-2026-01-16 16:50:26,878 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:50:26,884 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 16:50:26,884 - INFO - sqlalchemy.engine.Engine - [generated in 0.00086s] (2, 1, 0)
-2026-01-16 16:50:26,903 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts 
-WHERE shifts.employee_id = ? AND shifts.shift_date = ? AND shifts.start_time < ? AND shifts.end_time > ?
-2026-01-16 16:50:26,904 - INFO - sqlalchemy.engine.Engine - [generated in 0.00116s] (2, '2025-05-22', '2025-05-22 16:30:00.000000', '2025-05-22 09:00:00.000000')
-2026-01-16 16:50:26,910 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 16:50:26,914 - INFO - app.core.exception_handlers - ShiftConflictError on POST http://127.0.0.1:8000/schedule: Employee already has a shift that overlaps with the requested time window on this date
-2026-01-16 16:51:01,000 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:51:01,002 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
-FROM employees 
-WHERE employees.id = ?
- LIMIT ? OFFSET ?
-2026-01-16 16:51:01,003 - INFO - sqlalchemy.engine.Engine - [cached since 34.12s ago] (2, 1, 0)
-2026-01-16 16:51:01,006 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
-FROM shifts 
-WHERE shifts.employee_id = ? AND shifts.shift_date = ? AND shifts.start_time < ? AND shifts.end_time > ?
-2026-01-16 16:51:01,007 - INFO - sqlalchemy.engine.Engine - [cached since 34.11s ago] (2, '2025-05-22', '2025-05-22 22:30:00.000000', '2025-05-22 18:00:00.000000')
-2026-01-16 16:51:01,014 - INFO - sqlalchemy.engine.Engine - INSERT INTO shifts (employee_id, shift_date, shift, note, start_time, end_time) VALUES (?, ?, ?, ?, ?, ?)
-2026-01-16 16:51:01,020 - INFO - sqlalchemy.engine.Engine - [generated in 0.00596s] (2, '2025-05-22', 'MORNING', 'Regular shift', '2025-05-22 18:00:00.000000', '2025-05-22 22:30:00.000000')
-2026-01-16 16:51:01,036 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:51:01,060 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:51:01,074 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id, shifts.employee_id, shifts.shift_date, shifts.shift, shifts.note, shifts.start_time, shifts.end_time 
-FROM shifts 
-WHERE shifts.id = ?
-2026-01-16 16:51:01,075 - INFO - sqlalchemy.engine.Engine - [generated in 0.00128s] (5,)
-2026-01-16 16:51:01,101 - INFO - sqlalchemy.engine.Engine - ROLLBACK
-2026-01-16 16:56:16,787 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:56:16,791 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:56:16,791 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:56:16,793 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:56:16,795 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:56:16,795 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:56:16,797 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:56:24,589 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:56:24,592 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:56:24,593 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:56:24,593 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:56:24,595 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:56:24,595 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:56:24,596 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:57:15,704 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:57:15,706 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:57:15,707 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:57:15,708 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:15,709 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:57:15,709 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:15,710 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:57:18,872 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:57:18,874 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:57:18,875 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:57:18,875 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:18,876 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:57:18,877 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:18,877 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:57:47,123 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:57:47,124 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:57:47,125 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:57:47,125 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:47,126 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:57:47,126 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:47,128 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:57:51,025 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:57:51,027 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:57:51,027 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:57:51,027 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:51,028 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:57:51,028 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:57:51,029 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 16:58:02,859 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 16:58:02,861 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 16:58:02,861 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 16:58:02,861 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:58:02,861 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 16:58:02,862 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 16:58:02,862 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:00:33,348 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:00:33,350 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:00:33,350 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:00:33,350 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:00:33,351 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:00:33,352 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:00:33,352 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:04:00,577 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:04:00,578 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:04:00,578 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:04:00,578 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:04:00,579 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:04:00,579 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:04:00,579 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:05:16,420 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:05:16,422 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:05:16,422 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:05:16,423 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:05:16,424 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:05:16,424 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:05:16,425 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:07:36,448 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:07:36,449 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:07:36,450 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:07:36,450 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:07:36,451 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:07:36,451 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:07:36,451 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:11:44,914 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:11:44,917 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:11:44,917 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:11:44,918 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:11:44,919 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:11:44,919 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:11:44,920 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:19:04,834 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:19:04,837 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:19:04,838 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:19:04,838 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:19:04,840 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:19:04,840 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:19:04,841 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:23:39,694 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:23:39,696 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:23:39,696 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:23:39,697 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:23:39,697 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:23:39,698 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:23:39,698 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:25:21,278 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:25:21,281 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:25:21,282 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:25:21,283 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:25:21,284 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:25:21,284 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:25:21,285 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:26:15,598 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:26:15,599 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:26:15,600 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:26:15,600 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:26:15,601 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:26:15,601 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:26:15,602 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:27:09,044 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:27:09,046 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:27:09,047 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:27:09,047 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:27:09,048 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:27:09,049 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:27:09,050 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:27:55,089 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
-2026-01-16 17:27:55,091 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
-2026-01-16 17:27:55,091 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
-2026-01-16 17:27:55,091 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:27:55,092 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
-2026-01-16 17:27:55,092 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
-2026-01-16 17:27:55,093 - INFO - sqlalchemy.engine.Engine - COMMIT
-2026-01-16 17:30:48,388 - ERROR - app.core.exception_handlers - Unhandled exception on GET http://127.0.0.1:8000/analytics: TypeError("ShiftRepository.__init__() got an unexpected keyword argument 'session'")
-Traceback (most recent call last):
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\errors.py", line 164, in __call__
-    await self.app(scope, receive, _send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
-    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
-    await self.middleware_stack(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 736, in app
-    await route.handle(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\routing.py", line 290, in handle
-    await self.app(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 115, in app
-    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
-    raise exc
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
-    await app(scope, receive, sender)
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 101, in app
-    response = await f(request)
-               ^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\routing.py", line 345, in app
-    solved_result = await solve_dependencies(
-                    ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\fastapi\dependencies\utils.py", line 645, in solve_dependencies
-    solved = await run_in_threadpool(call, **solved_result.values)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\starlette\concurrency.py", line 32, in run_in_threadpool
-    return await anyio.to_thread.run_sync(func)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\to_thread.py", line 63, in run_sync
-    return await get_async_backend().run_sync_in_worker_thread(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2502, in run_sync_in_worker_thread
-    return await future
-           ^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\.venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 986, in run
-    result = context.run(func, *args)
-             ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\kalpa\projects\wasty\app\api\analytics.py", line 13, in get_analytics_service
-    shift_repo = ShiftRepository(session=db)
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: ShiftRepository.__init__() got an unexpected keyword argument 'session'
+2026-01-16 23:59:31,020 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-16 23:59:31,022 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id 
+WHERE shifts.shift_date >= ? AND shifts.shift_date <= ? GROUP BY shifts.employee_id, employees.name
+2026-01-16 23:59:31,022 - INFO - sqlalchemy.engine.Engine - [cached since 20.31s ago] ('%s', '%s', 3600.0, '2026-01-16', '2026-01-16')
+2026-01-16 23:59:31,027 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:00:34,602 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:00:34,604 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:00:34,604 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:00:34,604 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:00:34,605 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:00:34,606 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:00:34,606 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:00:37,605 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:00:37,627 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id 
+WHERE shifts.shift_date >= ? AND shifts.shift_date <= ? GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:00:37,631 - INFO - sqlalchemy.engine.Engine - [generated in 0.00488s] ('%s', '%s', 3600.0, '2026-01-17', '2026-01-17')
+2026-01-17 00:00:37,654 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:00:48,518 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:00:48,520 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:00:48,521 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:00:48,521 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:00:48,522 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:00:48,522 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:00:48,522 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:00:49,754 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:00:49,770 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id 
+WHERE shifts.shift_date >= ? AND shifts.shift_date <= ? GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:00:49,776 - INFO - sqlalchemy.engine.Engine - [generated in 0.00601s] ('%s', '%s', 3600.0, '2026-01-17', '2026-01-17')
+2026-01-17 00:00:49,784 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:01:09,726 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:01:09,729 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:01:09,730 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:01:09,731 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:01:09,733 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:01:09,733 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:01:09,734 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:01:11,099 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 00:01:11,102 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:01:11,160 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id 
+WHERE shifts.shift_date >= ? AND shifts.shift_date <= ? GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:01:11,162 - INFO - sqlalchemy.engine.Engine - [generated in 0.00234s] ('%s', '%s', 3600.0, '2026-01-17', '2026-01-17')
+2026-01-17 00:01:11,171 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:03:21,556 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:03:21,558 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:03:21,558 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:03:21,559 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:03:21,559 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:03:21,560 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:03:21,560 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:04:25,595 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:04:25,596 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:04:25,597 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:04:25,597 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:04:25,597 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:04:25,598 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:04:25,598 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:04:30,310 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 00:04:30,311 - INFO - app.services.analytics - inside if
+2026-01-17 00:04:30,311 - INFO - app.repositories.schedule - inside get_analytics_by_employee_all_time
+2026-01-17 00:04:30,315 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:04:30,394 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:04:30,395 - INFO - sqlalchemy.engine.Engine - [generated in 0.00129s] ('%s', '%s', 3600.0)
+2026-01-17 00:04:30,403 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:09:10,685 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:09:10,686 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:09:10,687 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:09:10,687 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:09:10,688 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:09:10,688 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:09:10,689 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:09:23,030 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:09:23,032 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:09:23,032 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:09:23,033 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:09:23,034 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:09:23,034 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:09:23,035 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:09:51,082 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 00:09:51,083 - INFO - app.services.analytics - inside if
+2026-01-17 00:09:51,083 - INFO - app.repositories.schedule - inside get_analytics_by_employee_all_time
+2026-01-17 00:09:51,087 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:09:51,126 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:09:51,130 - INFO - sqlalchemy.engine.Engine - [generated in 0.00240s] ('%s', '%s', 3600.0)
+2026-01-17 00:09:51,149 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:10:23,271 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:10:23,273 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:10:23,274 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:10:23,274 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:10:23,275 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:10:23,276 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:10:23,277 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:10:26,184 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 00:10:26,185 - INFO - app.services.analytics - inside if
+2026-01-17 00:10:26,186 - INFO - app.repositories.schedule - inside get_analytics_by_employee_all_time
+2026-01-17 00:10:26,189 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:10:26,340 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:10:26,358 - INFO - sqlalchemy.engine.Engine - [generated in 0.01895s] ('%s', '%s', 3600.0)
+2026-01-17 00:10:26,402 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:10:30,448 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 00:10:30,449 - INFO - app.services.analytics - inside if
+2026-01-17 00:10:30,450 - INFO - app.repositories.schedule - inside get_analytics_by_employee_all_time
+2026-01-17 00:10:30,452 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:10:30,454 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.employee_id, employees.name
+2026-01-17 00:10:30,455 - INFO - sqlalchemy.engine.Engine - [cached since 4.115s ago] ('%s', '%s', 3600.0)
+2026-01-17 00:10:30,462 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 00:11:17,592 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:11:17,593 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:11:17,594 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:11:17,594 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - COMMIT
