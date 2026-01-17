@@ -6,6 +6,9 @@ from app.core.exception_handlers import employee_not_found_handler, general_exce
 from app.core.exceptions import EmployeeNotFoundError, ShiftConflictError
 from app.db.base import Base, engine
 from app.api import analytics, employees, schedule
+from fastapi.middleware.cors import CORSMiddleware
+
+
 
 LOG_DIR = Path("logs")
 LOG_DIR.mkdir(exist_ok=True)
@@ -44,6 +47,13 @@ Base.metadata.create_all(bind=engine)
 # Main FastAPI application object
 app = FastAPI(title="Wasty Employee Scheduling API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:4200"],  # Angular dev server
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Register routers (controllers) with the app
 app.include_router(employees.router, prefix="/employees", tags=["employees"])

@@ -118,3 +118,117 @@ FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.
 2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
 2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
 2026-01-17 00:11:17,595 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 00:11:49,420 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 00:11:49,422 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 00:11:49,423 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 00:11:49,423 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:11:49,425 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 00:11:49,425 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 00:11:49,426 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 10:59:11,506 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 10:59:11,507 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 10:59:11,508 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 10:59:11,508 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 10:59:11,509 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 10:59:11,509 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 10:59:11,510 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 11:03:11,451 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 11:03:11,455 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 11:03:11,455 - INFO - sqlalchemy.engine.Engine - [generated in 0.00061s] ()
+2026-01-17 11:03:11,464 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 11:03:23,053 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 11:03:23,057 - INFO - sqlalchemy.engine.Engine - SELECT shifts.id AS shifts_id, shifts.employee_id AS shifts_employee_id, shifts.shift_date AS shifts_shift_date, shifts.shift AS shifts_shift, shifts.note AS shifts_note, shifts.start_time AS shifts_start_time, shifts.end_time AS shifts_end_time 
+FROM shifts ORDER BY shifts.shift_date ASC
+2026-01-17 11:03:23,057 - INFO - sqlalchemy.engine.Engine - [generated in 0.00083s] ()
+2026-01-17 11:03:23,065 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 11:04:48,498 - INFO - app.services.analytics - inside get_employee_analytics
+2026-01-17 11:04:48,499 - INFO - app.services.analytics - inside if
+2026-01-17 11:04:48,500 - INFO - app.repositories.schedule - inside get_analytics_by_employee_all_time
+2026-01-17 11:04:48,503 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 11:04:48,513 - INFO - sqlalchemy.engine.Engine - SELECT shifts.employee_id AS employee_id, employees.name AS employee_name, count(shifts.id) AS total_shifts, sum((strftime(?, shifts.end_time) - strftime(?, shifts.start_time)) / (? + 0.0)) AS total_hours 
+FROM shifts JOIN employees ON employees.id = shifts.employee_id GROUP BY shifts.employee_id, employees.name
+2026-01-17 11:04:48,514 - INFO - sqlalchemy.engine.Engine - [generated in 0.00082s] ('%s', '%s', 3600.0)
+2026-01-17 11:04:48,521 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:07:13,319 - INFO - wasty_app - Logging configured: file=logs\wasty_backend.log
+2026-01-17 13:07:13,323 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:07:13,324 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("employees")
+2026-01-17 13:07:13,324 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 13:07:13,331 - INFO - sqlalchemy.engine.Engine - PRAGMA main.table_info("shifts")
+2026-01-17 13:07:13,332 - INFO - sqlalchemy.engine.Engine - [raw sql] ()
+2026-01-17 13:07:13,333 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 13:10:01,499 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:10:01,504 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:10:01,505 - INFO - sqlalchemy.engine.Engine - [generated in 0.00072s] ()
+2026-01-17 13:10:01,510 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:10:32,617 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:10:32,623 - INFO - sqlalchemy.engine.Engine - INSERT INTO employees (name, role, availability) VALUES (?, ?, ?)
+2026-01-17 13:10:32,624 - INFO - sqlalchemy.engine.Engine - [generated in 0.00148s] ('Jane White', 'Operator', None)
+2026-01-17 13:10:32,636 - INFO - sqlalchemy.engine.Engine - COMMIT
+2026-01-17 13:10:32,651 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:10:32,685 - INFO - sqlalchemy.engine.Engine - SELECT employees.id, employees.name, employees.role, employees.availability 
+FROM employees 
+WHERE employees.id = ?
+2026-01-17 13:10:32,687 - INFO - sqlalchemy.engine.Engine - [generated in 0.00209s] (5,)
+2026-01-17 13:10:32,697 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:10:36,890 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:10:36,891 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:10:36,891 - INFO - sqlalchemy.engine.Engine - [cached since 35.39s ago] ()
+2026-01-17 13:10:36,895 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:19:47,728 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:19:47,729 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:19:47,729 - INFO - sqlalchemy.engine.Engine - [cached since 586.2s ago] ()
+2026-01-17 13:19:47,732 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:19:53,377 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:19:53,378 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:19:53,378 - INFO - sqlalchemy.engine.Engine - [cached since 591.9s ago] ()
+2026-01-17 13:19:53,382 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:20:08,632 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:20:08,634 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:20:08,635 - INFO - sqlalchemy.engine.Engine - [cached since 607.1s ago] ()
+2026-01-17 13:20:08,640 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:22:11,396 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:22:11,397 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:22:11,397 - INFO - sqlalchemy.engine.Engine - [cached since 729.9s ago] ()
+2026-01-17 13:22:11,400 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:22:17,501 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:22:17,502 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:22:17,502 - INFO - sqlalchemy.engine.Engine - [cached since 736s ago] ()
+2026-01-17 13:22:17,506 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:22:36,075 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:22:36,077 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:22:36,077 - INFO - sqlalchemy.engine.Engine - [cached since 754.6s ago] ()
+2026-01-17 13:22:36,080 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:22:59,661 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:22:59,663 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:22:59,663 - INFO - sqlalchemy.engine.Engine - [cached since 778.2s ago] ()
+2026-01-17 13:22:59,668 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:23:10,013 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:23:10,014 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:23:10,015 - INFO - sqlalchemy.engine.Engine - [cached since 788.5s ago] ()
+2026-01-17 13:23:10,017 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:23:11,786 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:23:11,787 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:23:11,788 - INFO - sqlalchemy.engine.Engine - [cached since 790.3s ago] ()
+2026-01-17 13:23:11,791 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:23:12,411 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:23:12,412 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:23:12,412 - INFO - sqlalchemy.engine.Engine - [cached since 790.9s ago] ()
+2026-01-17 13:23:12,416 - INFO - sqlalchemy.engine.Engine - ROLLBACK
+2026-01-17 13:23:55,060 - INFO - sqlalchemy.engine.Engine - BEGIN (implicit)
+2026-01-17 13:23:55,060 - INFO - sqlalchemy.engine.Engine - SELECT employees.id AS employees_id, employees.name AS employees_name, employees.role AS employees_role, employees.availability AS employees_availability 
+FROM employees
+2026-01-17 13:23:55,061 - INFO - sqlalchemy.engine.Engine - [cached since 833.6s ago] ()
+2026-01-17 13:23:55,065 - INFO - sqlalchemy.engine.Engine - ROLLBACK

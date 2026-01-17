@@ -1,6 +1,7 @@
 from typing import List
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import JSONResponse
 from sqlalchemy.orm import Session
 
 from app.db.base import get_db
@@ -101,4 +102,4 @@ def delete_employee(
             status_code=status.HTTP_404_NOT_FOUND,
             detail="Employee not found",
         )
-    return None
+    return JSONResponse({"message": "success"})

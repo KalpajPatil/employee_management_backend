@@ -13,7 +13,7 @@ def get_analytics_service(db_session: Session = Depends(get_db)) -> AnalyticsSer
     shift_repo = ShiftRepository(db=db_session)
     return AnalyticsService(shift_repo=shift_repo)
 
-#get all employee analytics and by date
+#get all employee analytics and analytics by date
 @router.get("", response_model=List[AnalyticsBase])
 def get_analytics(
     period: str | None = None,
