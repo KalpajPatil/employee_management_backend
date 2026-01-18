@@ -12,8 +12,8 @@ Welcome to your FastAPI project! Follow these steps to get up and running.
 ### Step 1: Clone the Repository
 
 ```bash
-git clone <your-repository-url>
-cd <your-project-folder>
+git clone https://github.com/KalpajPatil/employee_management_backend.git
+cd project_root
 ```
 
 ### Step 2: Create a Virtual Environment
